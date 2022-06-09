@@ -8,7 +8,7 @@ class ViewHandler: public BaseHandler{
 	};
 
 public:
-
+	
 	void executeRequest(int action)override {
 		switch (action)
 		{
