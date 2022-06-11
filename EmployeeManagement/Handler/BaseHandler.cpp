@@ -2,6 +2,12 @@
 #include "../Transporter/Inputer.h"
 #include "SidebarHandler.h"
 
+
+	bool BaseHandler::isAction() {
+		return m_state == e_message_type::ACTION;
+	}
+
+
 	void BaseHandler::printMenu(std::string filename){
 
 		std::ifstream readMenu(filename);
@@ -24,6 +30,12 @@
 	void BaseHandler::updateAction(int action) {
 		m_action = action;
 		executeRequest(action);
+	}
+
+	void BaseHandler::updateParamater(std::string paramater) {
+		m_paramater = paramater;
+		collectParamater(paramater);
+			
 	}
 
 	BaseHandler::~BaseHandler() {

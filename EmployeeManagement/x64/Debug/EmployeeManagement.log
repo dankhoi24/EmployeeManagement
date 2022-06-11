@@ -1,14 +1,17 @@
 ﻿  EMain.cpp
   The contents of <filesystem> are available only with C++17 or later.
+D:\.NET\Rainer\EmployeeManagement\EmployeeManagement\Handler\BaseHandler.h(32): warning C4091: 'static ': ignored on left of 'BaseHandler::e_message_type' when no variable is declared
   BaseHandler.cpp
   The contents of <filesystem> are available only with C++17 or later.
+D:\.NET\Rainer\EmployeeManagement\EmployeeManagement\Handler\BaseHandler.h(32): warning C4091: 'static ': ignored on left of 'BaseHandler::e_message_type' when no variable is declared
+  SearchHandler.cpp
+  The contents of <filesystem> are available only with C++17 or later.
+D:\.NET\Rainer\EmployeeManagement\EmployeeManagement\Handler\BaseHandler.h(32): warning C4091: 'static ': ignored on left of 'BaseHandler::e_message_type' when no variable is declared
   SidebarHandler.cpp
   The contents of <filesystem> are available only with C++17 or later.
-  ViewHandler.cpp
-  The contents of <filesystem> are available only with C++17 or later.
+D:\.NET\Rainer\EmployeeManagement\EmployeeManagement\Handler\BaseHandler.h(32): warning C4091: 'static ': ignored on left of 'BaseHandler::e_message_type' when no variable is declared
   BaseTransporter.cpp
   The contents of <filesystem> are available only with C++17 or later.
-  Inputer.cpp
-  The contents of <filesystem> are available only with C++17 or later.
+D:\.NET\Rainer\EmployeeManagement\EmployeeManagement\Handler\BaseHandler.h(32): warning C4091: 'static ': ignored on left of 'BaseHandler::e_message_type' when no variable is declared
   Generating Code...
   EmployeeManagement.vcxproj -> D:\.NET\Rainer\EmployeeManagement\x64\Debug\EmployeeManagement.exe

@@ -14,4 +14,12 @@ public:
 	 * 
 	 */
 	void getAll() ;
+	void getCurrent();
+	void getFormer();
+
+	Employee* getByID(std::string employee_id);
+
+	bool deleteEmployee(std::string employee_id);
+
+
 };

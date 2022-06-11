@@ -16,5 +16,6 @@ public:
 	ViewHandler(DBConnection* database);
 	
 	void executeRequest(int action)override;
+	void collectParamater(std::string)override;
 	std::string getFileName() override;
 };

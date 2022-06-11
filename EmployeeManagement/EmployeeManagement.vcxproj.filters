@@ -21,6 +21,8 @@
     <ClInclude Include="Handler\SidebarHandler.h" />
     <ClInclude Include="Handler\ViewHandler.h" />
     <ClInclude Include="Transporter\BaseTransporter.h" />
+    <ClInclude Include="Handler\SearchHandler.h" />
+    <ClInclude Include="Handler\UpdateHandler.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="DAO\DBConnection.cpp">
@@ -36,10 +38,15 @@
     <ClCompile Include="Transporter\BaseTransporter.cpp" />
     <ClCompile Include="Handler\ViewHandler.cpp" />
     <ClCompile Include="Handler\SidebarHandler.cpp" />
+    <ClCompile Include="Handler\SearchHandler.cpp" />
+    <ClCompile Include="Handler\UpdateHandler.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="Transporter\Printer\SidebarMenu.txt" />
     <Text Include="Transporter\Printer\ViewMenu.txt" />
     <Text Include="Handler\Text.txt" />
+    <Text Include="Transporter\Printer\SearchMenu.txt" />
+    <Text Include="Transporter\Printer\SearchInput.txt" />
+    <Text Include="Transporter\Printer\UpdateMenu.txt" />
   </ItemGroup>
 </Project>

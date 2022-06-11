@@ -1,6 +1,7 @@
 #pragma once
 
 #include "BaseHandler.h"
+#include "SearchHandler.h"
 
 #define SIDEBAR_HANDLER_MENU "Transporter/Printer/SidebarMenu.txt"
 
@@ -14,4 +15,5 @@ public:
 	std::string getFileName()override;
 		 
 	void executeRequest(int action)override;
+	void collectParamater(std::string paramater) override;
 };

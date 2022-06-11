@@ -4,18 +4,18 @@
 		getline(std::cin, m_value);
 		fflush(stdin);
 
-		onPropertyChanged(getValue());
+		onPropertyChanged(m_value);
 	}
 
 
-	int Inputer::getValue() {
+	int Inputer::getAction() {
 		try {
 			return std::stoi(m_value);
 		}
 		catch (std::invalid_argument e) {
 
+			return 0;
 		}
-		return 0;
 	}
 
 	std::string Inputer::m_value = "";

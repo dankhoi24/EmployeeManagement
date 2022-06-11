@@ -132,7 +132,9 @@
     <ClCompile Include="DAO\EmployeeDAO.cpp" />
     <ClCompile Include="EMain.cpp" />
     <ClCompile Include="Handler\BaseHandler.cpp" />
+    <ClCompile Include="Handler\SearchHandler.cpp" />
     <ClCompile Include="Handler\SidebarHandler.cpp" />
+    <ClCompile Include="Handler\UpdateHandler.cpp" />
     <ClCompile Include="Handler\ViewHandler.cpp" />
     <ClCompile Include="Model\Employee.cpp" />
     <ClCompile Include="Model\Title.cpp" />
@@ -144,7 +146,9 @@
     <ClInclude Include="DAO\DBConnection.h" />
     <ClInclude Include="DAO\EmployeeDAO.h" />
     <ClInclude Include="Handler\BaseHandler.h" />
+    <ClInclude Include="Handler\SearchHandler.h" />
     <ClInclude Include="Handler\SidebarHandler.h" />
+    <ClInclude Include="Handler\UpdateHandler.h" />
     <ClInclude Include="Handler\ViewHandler.h" />
     <ClInclude Include="Model\Employee.h" />
     <ClInclude Include="Model\Title.h" />
@@ -155,7 +159,10 @@
     <Text Include="Handler\Text.txt">
       <DeploymentContent>true</DeploymentContent>
     </Text>
+    <Text Include="Transporter\Printer\SearchInput.txt" />
+    <Text Include="Transporter\Printer\SearchMenu.txt" />
     <Text Include="Transporter\Printer\SidebarMenu.txt" />
+    <Text Include="Transporter\Printer\UpdateMenu.txt" />
     <Text Include="Transporter\Printer\ViewMenu.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
