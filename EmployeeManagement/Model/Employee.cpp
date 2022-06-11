@@ -5,4 +5,8 @@
 
 	}
 
+	Employee::Employee() {
+
+	}
+
 	Employee::~Employee(){}

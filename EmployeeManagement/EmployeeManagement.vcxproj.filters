@@ -20,6 +20,7 @@
     <ClInclude Include="Transporter\Inputer.h" />
     <ClInclude Include="Handler\SidebarHandler.h" />
     <ClInclude Include="Handler\ViewHandler.h" />
+    <ClInclude Include="Transporter\BaseTransporter.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="DAO\DBConnection.cpp">
@@ -31,5 +32,14 @@
     <ClCompile Include="DAO\BaseDAO.cpp" />
     <ClCompile Include="DAO\EmployeeDAO.cpp" />
     <ClCompile Include="Transporter\Inputer.cpp" />
+    <ClCompile Include="Handler\BaseHandler.cpp" />
+    <ClCompile Include="Transporter\BaseTransporter.cpp" />
+    <ClCompile Include="Handler\ViewHandler.cpp" />
+    <ClCompile Include="Handler\SidebarHandler.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="Transporter\Printer\SidebarMenu.txt" />
+    <Text Include="Transporter\Printer\ViewMenu.txt" />
+    <Text Include="Handler\Text.txt" />
   </ItemGroup>
 </Project>

@@ -55,7 +55,7 @@ public:
 			return false;
 		}
 		// checking statement
-		if (SQL_SUCCESS != SQLExecDirectW(m_SqlStmtHandle, const_cast<SQLWCHAR*>(TEXT("SELECT* FROM Title;")), SQL_NTS)) {
+		if (SQL_SUCCESS != SQLExecDirectW(m_SqlStmtHandle, const_cast<SQLWCHAR*>(TEXT("SELECT* FROM Employee;")), SQL_NTS)) {
 
 			MESSAGE_BOX("A2", "ERROR");
 			return false;

@@ -2,29 +2,16 @@
 
 #include "BaseHandler.h"
 
+#define SIDEBAR_HANDLER_MENU "Transporter/Printer/SidebarMenu.txt"
 
 class SidebarHandler : public BaseHandler {
 	enum Action {
 		NONE_ACTION = 0 ,VIEW , SEARCH, FILTER, ADD, EDIT
 	};
+	//DBConnection* m_database;
 public:
-	void executeRequest(int action)override {
-		switch (action)
-		{
-		case NONE_ACTION:
-			//sth
-			return;
-		case VIEW:
-			return;
-		case SEARCH:
-			return;
-		case FILTER:
-			return;
-		case ADD:
-			return;
-		case EDIT:
-			return;
-		}
-		// warning no option . . .
-	}
+	//SidebarHandler(DBConnection*);
+	std::string getFileName()override;
+		 
+	void executeRequest(int action)override;
 };

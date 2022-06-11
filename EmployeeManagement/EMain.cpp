@@ -14,6 +14,25 @@
 
 #include"DAO/DBConnection.h"
 #include "DAO/EmployeeDAO.h"
+#include "Handler/BaseHandler.h"
+#include "Handler/ViewHandler.h"
+#include "Handler/SidebarHandler.h"
+
+
+void initProgram(DBConnection * &database, BaseHandler *&current_handler, SidebarHandler *&sidebar_handler) {
+	database = DBConnection::getInstance();
+	database->connectToDB();
+	EmployeeDAO *x= new EmployeeDAO(database);
+	current_handler = new ViewHandler(database);
+	sidebar_handler = new SidebarHandler();
+	sidebar_handler->printMenu(sidebar_handler->getFileName());
+
+}
+
+
+
+
+
 
 /**
  * @brief Main function
@@ -22,22 +41,23 @@
  */
 int main() {
 	//Init Connection to database
-	//DBConnection *x = DBConnection::getInstance();
-	//x->connectToDB();
-	//EmployeeDAO k(x);
+	DBConnection* database;// = DBConnection::getInstance();
+	BaseHandler *current_handler;
+	SidebarHandler* sidebar_handler;
+	initProgram(database, current_handler, sidebar_handler);
 	//if (k.checkQueryString("s")) {
 	//	k.getAll();
 	//}
 	
 
-	std::string a = "a";
-	try {
+	//std::string a = "a";
+	//try {
 
-		int x = std::stoi(a);
-	}
-	catch(std::invalid_argument e) {
-		std::cout << "f" << "\n";
-	}
+	//	int x = std::stoi(a);
+	//}
+	//catch(std::invalid_argument e) {
+	//	std::cout << "f" << "\n";
+	//}
 
 
 

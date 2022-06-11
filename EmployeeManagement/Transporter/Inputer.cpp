@@ -3,12 +3,10 @@
 	void Inputer::setValue() {
 		getline(std::cin, m_value);
 		fflush(stdin);
+
+		onPropertyChanged(getValue());
 	}
 
-
-	bool Inputer::checkValidValud() {
-		return true;
-	}
 
 	int Inputer::getValue() {
 		try {

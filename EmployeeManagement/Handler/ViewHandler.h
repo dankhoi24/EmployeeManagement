@@ -1,28 +1,20 @@
 #pragma once
 #include "BaseHandler.h"
 
+#define VIEW_HANDLER_MENU "Transporter/Printer/ViewMenu.txt"
+
 class ViewHandler: public BaseHandler{
+
 	enum Action
 	{
-		NONE_ACTION = 0, VIEW_ALL, VIEW_CURRENT, VIEW_FORMER
+		NONE_ACTION = 6, VIEW_ALL, VIEW_CURRENT, VIEW_FORMER
 	};
 
-public:
-	
-	void executeRequest(int action)override {
-		switch (action)
-		{
-		case NONE_ACTION:
-			//sth
-			return;
-		case VIEW_ALL:
-			return;
-		case VIEW_CURRENT:
-			return;
-		case VIEW_FORMER:
-			return;
-		}
-		// warning no option . . .
-	}
+	DBConnection* m_database;
 
+public:
+	ViewHandler(DBConnection* database);
+	
+	void executeRequest(int action)override;
+	std::string getFileName() override;
 };

@@ -131,8 +131,12 @@
     <ClCompile Include="DAO\DBConnection.cpp" />
     <ClCompile Include="DAO\EmployeeDAO.cpp" />
     <ClCompile Include="EMain.cpp" />
+    <ClCompile Include="Handler\BaseHandler.cpp" />
+    <ClCompile Include="Handler\SidebarHandler.cpp" />
+    <ClCompile Include="Handler\ViewHandler.cpp" />
     <ClCompile Include="Model\Employee.cpp" />
     <ClCompile Include="Model\Title.cpp" />
+    <ClCompile Include="Transporter\BaseTransporter.cpp" />
     <ClCompile Include="Transporter\Inputer.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -144,7 +148,15 @@
     <ClInclude Include="Handler\ViewHandler.h" />
     <ClInclude Include="Model\Employee.h" />
     <ClInclude Include="Model\Title.h" />
+    <ClInclude Include="Transporter\BaseTransporter.h" />
     <ClInclude Include="Transporter\Inputer.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="Handler\Text.txt">
+      <DeploymentContent>true</DeploymentContent>
+    </Text>
+    <Text Include="Transporter\Printer\SidebarMenu.txt" />
+    <Text Include="Transporter\Printer\ViewMenu.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -1,0 +1,5 @@
+1. View
+2. Search
+3. Add
+4. Setting
+5. Exit

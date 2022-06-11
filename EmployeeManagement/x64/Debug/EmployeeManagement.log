@@ -1,2 +1,14 @@
 ﻿  EMain.cpp
+  The contents of <filesystem> are available only with C++17 or later.
+  BaseHandler.cpp
+  The contents of <filesystem> are available only with C++17 or later.
+  SidebarHandler.cpp
+  The contents of <filesystem> are available only with C++17 or later.
+  ViewHandler.cpp
+  The contents of <filesystem> are available only with C++17 or later.
+  BaseTransporter.cpp
+  The contents of <filesystem> are available only with C++17 or later.
+  Inputer.cpp
+  The contents of <filesystem> are available only with C++17 or later.
+  Generating Code...
   EmployeeManagement.vcxproj -> D:\.NET\Rainer\EmployeeManagement\x64\Debug\EmployeeManagement.exe

@@ -50,6 +50,13 @@ public:
 	Employee(int ID, const String &name, const String &phone, const String &address, const String &mail, char gender, time_t start_date, time_t end_date, bool is_working, int title_ID);
 	
 	/**
+	 * @brief Constructor
+	 * 
+	 */
+	Employee();
+
+	
+	/**
 	 * @brief Destroy the Employee object
 	 * 
 	 */
