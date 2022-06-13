@@ -340,21 +340,15 @@ Employee* EmployeeDAO::getByID(std::string employee_id) {
 		//TimeT x = TimeT(1,2,3)
 
 
-			 struct tm tm;
-			 std::istringstream iss(std::to_string(start_date->month) + 
-			 " " + std::to_string(start_date->day) + 
-				 " " + std::to_string(end_date->year) );
+			 //struct tm tm;
+			 //std::string start_date_str = std::to_string(start_date->month) +
+				// " " + std::to_string(start_date->day) +
+				// " " + std::to_string(end_date->year);
+			 TimeT start_date_struct(std::to_string(start_date->day), std::to_string( start_date->month), std::to_string(start_date->year));
+			 TimeT end_date_struct;
 
-    iss >> std::get_time(&tm, "%b %d %Y");
-    TimeT times = mktime(&tm);
-
-		std::cout <<times<<'\n';
-
-			time(&times);
-	std::cout << ctime(&times);
-
-			
-	employee = new Employee(id, std::string(name),std::string(phone), std::string(address), std::string(mail), gender[0], times, times, is_working, 1);
+   			
+	employee = new Employee(id, std::string(name),std::string(phone), std::string(address), std::string(mail), gender[0], start_date_struct, end_date_struct, is_working, 1);
 
 
 	}

@@ -57,7 +57,10 @@ void AddHandler::collectParamater(std::string paramater) {
 		m_add_state = State::STARTDATE;
 		return;
 	case STARTDATE:
-		m_employee.setStartDate(paramater);
+		if (m_employee.setStartDate(paramater)) {
+			MessageBox(NULL, TEXT("Invalid date"), TEXT("Error"), MB_OKCANCEL);
+			return;
+		}
 		m_add_state = State::TITLE;
 		return;
 	case TITLE:

@@ -55,20 +55,14 @@
 	void Employee::setRole(std::string role) {
 		m_title_ID = 1;
 	}
-	void Employee::setStartDate(std::string date) {
-		struct std::tm tm;
-		std::istringstream ss(date);
-		ss >> std::get_time(&tm, "%Y-%m-%d");
-		TimeT times = mktime(&tm);
-		m_start_date = times;
-		std::cout <<"--"<<wtime(times) << "__" << std::endl;
-
+	bool Employee::setStartDate(std::string date) {
+		return m_start_date.setDate(date);
 
 		
 	}
 
-	void Employee::setEndDate() {
-		m_end_date = TimeT::getNow();
+	void Employee::setEndDate(std::string date) {
+		m_end_date.setDate(date);
 	}
 
 
@@ -93,13 +87,10 @@
 		return std::to_string(m_gender);
 	}
 	std::string Employee::getStartDate() const{
-		return wtime(m_start_date);
+		return m_start_date.getDate();
 	}
 	std::string Employee::getEndDate() const{
-
-		std::stringstream ss;
-		ss << m_end_date;
-		return ss.str();
+		return m_end_date.getDate();
 	}
 	std::string Employee::getRole() const{
 		return "1";

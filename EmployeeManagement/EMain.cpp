@@ -19,7 +19,32 @@
 #include "Handler/SidebarHandler.h"
 
 
+void showLogo() {
+
+	HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
+  // you can loop k higher to see more color choices
+    SetConsoleTextAttribute(hConsole, 1);
+
+
+		std::ifstream readMenu("Transporter/Printer/logo.txt");
+		if (readMenu.is_open()) {
+		}
+		std::string line = "";
+		while (getline(readMenu, line)) {
+			std::cout << line << std::endl;
+			Sleep(500);
+		}
+		readMenu.close();
+    SetConsoleTextAttribute(hConsole, 15);
+
+}
+
 void initProgram(DBConnection * &database, BaseHandler *&current_handler, SidebarHandler *&sidebar_handler) {
+
+
+	showLogo();
+
+
 	database = DBConnection::getInstance();
 	database->connectToDB();
 	EmployeeDAO *x= new EmployeeDAO(database);

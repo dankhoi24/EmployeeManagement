@@ -55,5 +55,6 @@
     <Text Include="Model\Roles.txt" />
     <Text Include="Transporter\Printer\AddMenu.txt" />
     <Text Include="Transporter\Printer\AddForm\Add_name.txt" />
+    <Text Include="Transporter\Printer\logo.txt" />
   </ItemGroup>
 </Project>

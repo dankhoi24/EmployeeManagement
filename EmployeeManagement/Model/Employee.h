@@ -77,8 +77,8 @@ public:
 	void setPhone(std::string phone);
 	void setMail(std::string mail);
 	void setGender(char gender);
-	void setStartDate(std::string date);
-	void setEndDate();
+	bool setStartDate(std::string date);
+	void setEndDate(std::string date);
 	void setRole(std::string role);
 
 
