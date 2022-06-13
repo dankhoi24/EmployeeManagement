@@ -19,6 +19,9 @@
 		}
 		readMenu.close();
 
+
+		printTitle();
+
 		if (dynamic_cast<SidebarHandler*>(this)) {
 
 			Inputer::setValue();

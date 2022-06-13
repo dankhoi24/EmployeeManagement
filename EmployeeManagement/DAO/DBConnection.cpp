@@ -35,6 +35,7 @@ DBConnection* DBConnection::s_instance = NULL;
 	}
 
 	DBConnection:: ~DBConnection() {
+		std::cout << "))))))))))))))))))))))))))))))))))))))0\n";
 		delete DBConnection::s_instance;
 	}
 

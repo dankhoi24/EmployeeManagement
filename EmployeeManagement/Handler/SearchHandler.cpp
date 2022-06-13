@@ -1,4 +1,6 @@
 #include "SearchHandler.h"
+#include "../Transporter/Inputer.h"
+#include "UpdateHandler.h"
 
 
 void SearchHandler::executeRequest(int action) {
@@ -13,6 +15,7 @@ void SearchHandler::executeRequest(int action) {
 		m_state = e_message_type::PARAMATER;
 		return;
 	case UPDATE_EMPLOYEE:
+		Inputer::setHandler(new UpdateHandler(m_employee));
 		return;
 
 	default:
@@ -35,7 +38,7 @@ std::string SearchHandler::getFileName() {
 
 void SearchHandler::collectParamater(std::string paramater) {
 	EmployeeDAO employeeDB(m_database);
-	employeeDB.getByID(paramater);
+	m_employee = employeeDB.getByID(paramater);
 
 	m_state = e_message_type::ACTION;
 	}

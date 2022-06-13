@@ -1,17 +1,47 @@
-﻿  EMain.cpp
+﻿  EmployeeDAO.cpp
+D:\.NET\Rainer\EmployeeManagement\EmployeeManagement\DAO\EmployeeDAO.cpp(70,10): warning C4101: 'sth': unreferenced local variable
+D:\.NET\Rainer\EmployeeManagement\EmployeeManagement\DAO\EmployeeDAO.cpp(153,10): warning C4101: 'sth': unreferenced local variable
+D:\.NET\Rainer\EmployeeManagement\EmployeeManagement\DAO\EmployeeDAO.cpp(238,10): warning C4101: 'sth': unreferenced local variable
+D:\.NET\Rainer\EmployeeManagement\EmployeeManagement\DAO\EmployeeDAO.cpp(349,30): error C2440: 'initializing': cannot convert from 'time_t' to 'TimeT'
+D:\.NET\Rainer\EmployeeManagement\EmployeeManagement\DAO\EmployeeDAO.cpp(349,30): message : No constructor could take the source type, or constructor overload resolution was ambiguous
+D:\.NET\Rainer\EmployeeManagement\EmployeeManagement\DAO\EmployeeDAO.cpp(353,15): error C2664: 'time_t time(time_t *const )': cannot convert argument 1 from 'TimeT *' to 'time_t *const '
+D:\.NET\Rainer\EmployeeManagement\EmployeeManagement\DAO\EmployeeDAO.cpp(353,9): message : Types pointed to are unrelated; conversion requires reinterpret_cast, C-style cast or parenthesized function-style cast
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\ucrt\time.h(518,42): message : see declaration of 'time'
+D:\.NET\Rainer\EmployeeManagement\EmployeeManagement\DAO\EmployeeDAO.cpp(354,27): error C2664: 'char *ctime(const time_t *const )': cannot convert argument 1 from 'TimeT *' to 'const time_t *const '
+D:\.NET\Rainer\EmployeeManagement\EmployeeManagement\DAO\EmployeeDAO.cpp(354,21): message : Types pointed to are unrelated; conversion requires reinterpret_cast, C-style cast or parenthesized function-style cast
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\ucrt\time.h(471,41): message : see declaration of 'ctime'
+  EMain.cpp
   The contents of <filesystem> are available only with C++17 or later.
-D:\.NET\Rainer\EmployeeManagement\EmployeeManagement\Handler\BaseHandler.h(32): warning C4091: 'static ': ignored on left of 'BaseHandler::e_message_type' when no variable is declared
+D:\.NET\Rainer\EmployeeManagement\EmployeeManagement\Handler\BaseHandler.h(35): warning C4091: 'static ': ignored on left of 'BaseHandler::e_message_type' when no variable is declared
+  AddHandler.cpp
+  The contents of <filesystem> are available only with C++17 or later.
+D:\.NET\Rainer\EmployeeManagement\EmployeeManagement\Handler\BaseHandler.h(35): warning C4091: 'static ': ignored on left of 'BaseHandler::e_message_type' when no variable is declared
   BaseHandler.cpp
   The contents of <filesystem> are available only with C++17 or later.
-D:\.NET\Rainer\EmployeeManagement\EmployeeManagement\Handler\BaseHandler.h(32): warning C4091: 'static ': ignored on left of 'BaseHandler::e_message_type' when no variable is declared
+D:\.NET\Rainer\EmployeeManagement\EmployeeManagement\Handler\BaseHandler.h(35): warning C4091: 'static ': ignored on left of 'BaseHandler::e_message_type' when no variable is declared
   SearchHandler.cpp
   The contents of <filesystem> are available only with C++17 or later.
-D:\.NET\Rainer\EmployeeManagement\EmployeeManagement\Handler\BaseHandler.h(32): warning C4091: 'static ': ignored on left of 'BaseHandler::e_message_type' when no variable is declared
+D:\.NET\Rainer\EmployeeManagement\EmployeeManagement\Handler\BaseHandler.h(35): warning C4091: 'static ': ignored on left of 'BaseHandler::e_message_type' when no variable is declared
   SidebarHandler.cpp
   The contents of <filesystem> are available only with C++17 or later.
-D:\.NET\Rainer\EmployeeManagement\EmployeeManagement\Handler\BaseHandler.h(32): warning C4091: 'static ': ignored on left of 'BaseHandler::e_message_type' when no variable is declared
+D:\.NET\Rainer\EmployeeManagement\EmployeeManagement\Handler\BaseHandler.h(35): warning C4091: 'static ': ignored on left of 'BaseHandler::e_message_type' when no variable is declared
+  UpdateHandler.cpp
+  The contents of <filesystem> are available only with C++17 or later.
+D:\.NET\Rainer\EmployeeManagement\EmployeeManagement\Handler\BaseHandler.h(35): warning C4091: 'static ': ignored on left of 'BaseHandler::e_message_type' when no variable is declared
+  ViewHandler.cpp
+  The contents of <filesystem> are available only with C++17 or later.
+D:\.NET\Rainer\EmployeeManagement\EmployeeManagement\Handler\BaseHandler.h(35): warning C4091: 'static ': ignored on left of 'BaseHandler::e_message_type' when no variable is declared
+  Employee.cpp
+  The contents of <filesystem> are available only with C++17 or later.
+D:\.NET\Rainer\EmployeeManagement\EmployeeManagement\Model\Employee.cpp(19,23): error C2512: 'TimeT': no appropriate default constructor available
+D:\.NET\Rainer\EmployeeManagement\EmployeeManagement\Model\TimeT.h(7,7): message : see declaration of 'TimeT'
+D:\.NET\Rainer\EmployeeManagement\EmployeeManagement\Model\Employee.cpp(62,28): error C2440: 'initializing': cannot convert from 'time_t' to 'TimeT'
+D:\.NET\Rainer\EmployeeManagement\EmployeeManagement\Model\Employee.cpp(62,28): message : No constructor could take the source type, or constructor overload resolution was ambiguous
+  TimeT.cpp
   BaseTransporter.cpp
   The contents of <filesystem> are available only with C++17 or later.
-D:\.NET\Rainer\EmployeeManagement\EmployeeManagement\Handler\BaseHandler.h(32): warning C4091: 'static ': ignored on left of 'BaseHandler::e_message_type' when no variable is declared
+D:\.NET\Rainer\EmployeeManagement\EmployeeManagement\Handler\BaseHandler.h(35): warning C4091: 'static ': ignored on left of 'BaseHandler::e_message_type' when no variable is declared
+  Inputer.cpp
+  The contents of <filesystem> are available only with C++17 or later.
+D:\.NET\Rainer\EmployeeManagement\EmployeeManagement\Handler\BaseHandler.h(35): warning C4091: 'static ': ignored on left of 'BaseHandler::e_message_type' when no variable is declared
   Generating Code...
-  EmployeeManagement.vcxproj -> D:\.NET\Rainer\EmployeeManagement\x64\Debug\EmployeeManagement.exe

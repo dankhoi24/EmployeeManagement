@@ -11,6 +11,9 @@ public:
 	virtual void executeRequest(int action) = 0;
 	virtual void collectParamater(std::string paramater) = 0;
 	virtual std::string getFileName() = 0;
+	virtual void printTitle() {
+		std::cout << "#########################\n";
+	}
 	~BaseHandler();
 
 

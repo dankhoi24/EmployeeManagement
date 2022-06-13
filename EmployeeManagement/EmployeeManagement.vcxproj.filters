@@ -23,6 +23,8 @@
     <ClInclude Include="Transporter\BaseTransporter.h" />
     <ClInclude Include="Handler\SearchHandler.h" />
     <ClInclude Include="Handler\UpdateHandler.h" />
+    <ClInclude Include="Handler\AddHandler.h" />
+    <ClInclude Include="Model\TimeT.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="DAO\DBConnection.cpp">
@@ -40,6 +42,8 @@
     <ClCompile Include="Handler\SidebarHandler.cpp" />
     <ClCompile Include="Handler\SearchHandler.cpp" />
     <ClCompile Include="Handler\UpdateHandler.cpp" />
+    <ClCompile Include="Handler\AddHandler.cpp" />
+    <ClCompile Include="Model\TimeT.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="Transporter\Printer\SidebarMenu.txt" />
@@ -48,5 +52,8 @@
     <Text Include="Transporter\Printer\SearchMenu.txt" />
     <Text Include="Transporter\Printer\SearchInput.txt" />
     <Text Include="Transporter\Printer\UpdateMenu.txt" />
+    <Text Include="Model\Roles.txt" />
+    <Text Include="Transporter\Printer\AddMenu.txt" />
+    <Text Include="Transporter\Printer\AddForm\Add_name.txt" />
   </ItemGroup>
 </Project>

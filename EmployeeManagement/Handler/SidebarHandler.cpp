@@ -1,5 +1,6 @@
 #include "SidebarHandler.h"
 #include "../Transporter/Inputer.h"
+#include "AddHandler.h"
 
 
 
@@ -28,9 +29,8 @@
 		case SEARCH:
 			Inputer::setHandler(new SearchHandler(DBConnection::getInstance()));
 			return;
-		case FILTER:
-			return;
 		case ADD:
+			Inputer::setHandler(new AddHandler(DBConnection::getInstance()));
 			return;
 		case EDIT:
 			return;

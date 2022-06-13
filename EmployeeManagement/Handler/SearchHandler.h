@@ -9,7 +9,7 @@
 
 
 class SearchHandler: public BaseHandler{
-	Employee m_employee;
+	Employee * m_employee;
 	DBConnection* m_database;
 
 	enum Action {

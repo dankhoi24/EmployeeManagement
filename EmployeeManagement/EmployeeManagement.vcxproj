@@ -131,12 +131,14 @@
     <ClCompile Include="DAO\DBConnection.cpp" />
     <ClCompile Include="DAO\EmployeeDAO.cpp" />
     <ClCompile Include="EMain.cpp" />
+    <ClCompile Include="Handler\AddHandler.cpp" />
     <ClCompile Include="Handler\BaseHandler.cpp" />
     <ClCompile Include="Handler\SearchHandler.cpp" />
     <ClCompile Include="Handler\SidebarHandler.cpp" />
     <ClCompile Include="Handler\UpdateHandler.cpp" />
     <ClCompile Include="Handler\ViewHandler.cpp" />
     <ClCompile Include="Model\Employee.cpp" />
+    <ClCompile Include="Model\TimeT.cpp" />
     <ClCompile Include="Model\Title.cpp" />
     <ClCompile Include="Transporter\BaseTransporter.cpp" />
     <ClCompile Include="Transporter\Inputer.cpp" />
@@ -145,12 +147,14 @@
     <ClInclude Include="DAO\BaseDAO.h" />
     <ClInclude Include="DAO\DBConnection.h" />
     <ClInclude Include="DAO\EmployeeDAO.h" />
+    <ClInclude Include="Handler\AddHandler.h" />
     <ClInclude Include="Handler\BaseHandler.h" />
     <ClInclude Include="Handler\SearchHandler.h" />
     <ClInclude Include="Handler\SidebarHandler.h" />
     <ClInclude Include="Handler\UpdateHandler.h" />
     <ClInclude Include="Handler\ViewHandler.h" />
     <ClInclude Include="Model\Employee.h" />
+    <ClInclude Include="Model\TimeT.h" />
     <ClInclude Include="Model\Title.h" />
     <ClInclude Include="Transporter\BaseTransporter.h" />
     <ClInclude Include="Transporter\Inputer.h" />
@@ -159,6 +163,9 @@
     <Text Include="Handler\Text.txt">
       <DeploymentContent>true</DeploymentContent>
     </Text>
+    <Text Include="Model\Roles.txt" />
+    <Text Include="Transporter\Printer\AddForm\Add_name.txt" />
+    <Text Include="Transporter\Printer\AddMenu.txt" />
     <Text Include="Transporter\Printer\SearchInput.txt" />
     <Text Include="Transporter\Printer\SearchMenu.txt" />
     <Text Include="Transporter\Printer\SidebarMenu.txt" />

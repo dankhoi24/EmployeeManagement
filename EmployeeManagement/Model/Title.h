@@ -22,6 +22,10 @@ private:
 	int m_ID;
 	String m_name;
 	double m_salary;
+
+	enum Role {
+		 FRESHER = 1, JUNIOR, SENIOR
+	};
 public:
 	/**
 	 * @brief Construct a new Title object

@@ -7,7 +7,7 @@
 
 class SidebarHandler : public BaseHandler {
 	enum Action {
-		NONE_ACTION = 0 ,VIEW , SEARCH, FILTER, ADD, EDIT
+		NONE_ACTION = 0 ,VIEW , SEARCH, ADD, EDIT
 	};
 	//DBConnection* m_database;
 public:
