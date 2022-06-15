@@ -29,6 +29,8 @@ public:
 	 * @param v_entity 
 	 */
 	static void printVector(const std::vector<T>& v_entity);
+	static void printEntry(const T& entity);
+
 };
 
 	template<typename T>
@@ -38,3 +40,10 @@ public:
 			std::cout << (*it) << "\n";
 		}
 	}
+
+	 template<typename T>
+	void PrintLib<T>::printEntry(const T& entity) {
+		std::cout << entity << std::endl;
+	}
+
+	 

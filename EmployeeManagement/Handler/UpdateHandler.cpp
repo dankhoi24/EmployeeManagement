@@ -22,7 +22,9 @@ void UpdateHandler::executeRequest(int action) {
 		return;
 	case FIRE_EMPLOYEE: // fire employee action
 	 	// fire employee by ID
-		employeedb.FireEmployee(std::to_string(m_employee->getId()));
+		if (employeedb.FireEmployee(std::to_string(m_employee->getId()))) {
+			MessageBox(NULL, TEXT("Fire employee succeeded"), TEXT("Notify"), MB_OK);
+		}
 		return;
 	case PROMOTE_EMPLOYEE: // promote employee action
 		promoteEmployee();
@@ -64,13 +66,15 @@ void UpdateHandler::demoteEmployee() {
 	// get role index in role hierarchical structure
 	int index = getIndex();
 	if (index == -1) {
+
+		MessageBox(NULL, TEXT("NOT EXIST"), TEXT("WARNING"), MB_OKCANCEL);
 		return;
 	}
 
 	// check employee's role is lowest
 	if (index == (m_Roles.size() - 1 )){
 		// can not promote 
-		MessageBox(NULL, TEXT("NOT EXIST"), TEXT("WARNING"), MB_OKCANCEL);
+		MessageBox(NULL, TEXT("Can't promote this employee"), TEXT("WARNING"), MB_OKCANCEL);
 		return;
 
 	}

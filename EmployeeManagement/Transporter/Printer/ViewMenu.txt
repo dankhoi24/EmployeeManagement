@@ -1,9 +1,6 @@
-
-
 ____  
 \ _/    7. View all employee
 //      8. View current employee
 \\_     9. View former employee
 /__\  
       
-

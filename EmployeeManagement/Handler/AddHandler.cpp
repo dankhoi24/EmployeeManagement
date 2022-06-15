@@ -10,6 +10,8 @@
  */
 #include "AddHandler.h"
 #include "../Transporter/Inputer.h"
+#include "../DAO/TitleDAO.h"
+#include "../Lib/PrintLib.h"
 
 
 
@@ -32,6 +34,9 @@ void AddHandler::updateEmployee() {
 	//update database
 	EmployeeDAO employeeDb(m_database);
 	employeeDb.addEmployee(m_employee);
+	//print result
+	Employee::printHeader();
+	PrintLib<Employee>::printEntry(m_employee);
 
 	// changed handler
 	Inputer::setHandler(new ViewHandler(DBConnection::getInstance()));
@@ -94,6 +99,18 @@ std::string AddHandler::getFileName() {
 	}
 
 
+void AddHandler::printTitleOption() {
+	// create title_DAO
+	TitleDAO titledb(DBConnection::getInstance());
+	// get all title
+	std::vector<Title> v_title = titledb.getAll();
+	// show all title to console 
+	for (auto it = v_title.begin(); it != v_title.end(); it++) {
+		std::cout << it->getTitleID() << ". " << it->getTitleName() << std::endl;
+	}
+
+}
+
 void AddHandler::printTitle() {
 	// print title for each adding operator
 	switch (m_add_state)
@@ -112,12 +129,16 @@ void AddHandler::printTitle() {
 		return;
 	case GENDER:
 		std::cout << "Enter employee's gender\n";
+		std::cout << "0. Female" << std::endl;
+		std::cout << "1. Male" << std::endl;
+		std::cout << "any number. Undefined" << std::endl;
 		return;
 	case STARTDATE:
-		std::cout << "Enter employee's start date\n";
+		std::cout << "Enter employee's start date [YYYY-MM-DD]\n";
 		return;
 	case TITLE:
 		std::cout << "Enter employee's title\n";
+		printTitleOption();
 		return;
 
 	default:

@@ -79,6 +79,12 @@ public:
 	 * 
 	 */
 	void updateEmployee();
+	/**
+	 * @brief print option of title for user when adding employee
+	 * 
+	 */
+	void printTitleOption();
+
 
 	/**
 	 * @brief Construct a new Add Handler object

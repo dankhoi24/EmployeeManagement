@@ -35,6 +35,10 @@ public:
 	 * @param salary 
 	 */
 	Title(int ID,const String &name, double salary);
+
+	
+	std::string getTitleID();
+	std::string getTitleName();
 	/**
 	 * @brief Destroy the Title object
 	 * 

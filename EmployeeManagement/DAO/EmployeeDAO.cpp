@@ -81,6 +81,8 @@ Values('" + employee.getName() +"', '"+ employee.getPhone() + "','"+ employee.ge
 		SQLBindCol(this->m_SqlStmtHandle, 8, SQL_C_TYPE_DATE, end_date, sizeof(SQL_TIMESTAMP_LEN), NULL);
 		SQLBindCol(this->m_SqlStmtHandle, 9, SQL_C_DEFAULT, &is_working, sizeof(is_working), NULL);
 	}
+
+	MessageBox(NULL, TEXT("Adding employee succeeded"), TEXT("Notify"), MB_OKCANCEL);
 }
 
 
@@ -320,16 +322,16 @@ Employee* EmployeeDAO::getByID(std::string employee_id) {
 		SQLBindCol(this->m_SqlStmtHandle, 8, SQL_C_TYPE_DATE, end_date, sizeof(SQL_TIMESTAMP_LEN), NULL);
 		SQLBindCol(this->m_SqlStmtHandle, 9, SQL_C_DEFAULT, &is_working, sizeof(is_working), NULL);
 
-		std::cout << id << " " << name << " "
-			<< phone << " "
-			<< address << " "
-			<< mail << " "
-			<< gender << " "
-			<< start_date->day << " "
-			<< end_date->day << " "
-			<< is_working
+		// std::cout << id << " " << name << " "
+		// 	<< phone << " "
+		// 	<< address << " "
+		// 	<< mail << " "
+		// 	<< gender << " "
+		// 	<< start_date->day << " "
+		// 	<< end_date->day << " "
+		// 	<< is_working
 
-			<< std::endl;
+		// 	<< std::endl;
 
 		//TimeT x = TimeT(1,2,3)
 
@@ -339,7 +341,7 @@ Employee* EmployeeDAO::getByID(std::string employee_id) {
 				// " " + std::to_string(start_date->day) +
 				// " " + std::to_string(end_date->year);
 			 TimeT start_date_struct(std::to_string(start_date->day), std::to_string( start_date->month), std::to_string(start_date->year));
-			 TimeT end_date_struct;
+			 TimeT end_date_struct(std::to_string(end_date->day), std::to_string( end_date->month), std::to_string(end_date->year));
 
    			
 	employee = new Employee(id, std::string(name),std::string(phone), std::string(address), std::string(mail), gender[0], start_date_struct, end_date_struct, is_working, 1);
@@ -609,6 +611,8 @@ void EmployeeDAO::setRoleEmployee(std::string employee_id, std::string role) {
 	std::cout << "GO TO PROMOTE \n";
 
 	if (!allocateEnvironment()) {
+
+		MessageBox(NULL, TEXT("Can't connect to database"), TEXT("Warning"), MB_OK);
 		return;
 	}
 
@@ -625,7 +629,7 @@ void EmployeeDAO::setRoleEmployee(std::string employee_id, std::string role) {
 	// checking statement
 	if (SQL_SUCCESS != SQLExecDirectW(m_SqlStmtHandle, (SQLWCHAR*)str.c_str(), SQL_NTS)) {
 
-		MESSAGE_BOX("A2", "ERROR");
+		MESSAGE_BOX("Invalid query string", "ERROR");
 		return;
 	}
 
@@ -640,6 +644,7 @@ void EmployeeDAO::setRoleEmployee(std::string employee_id, std::string role) {
 
 	}
 
+		MessageBox(NULL, TEXT("Modify role succeeded"), TEXT("Notify"), MB_OK);
 
 	}
 

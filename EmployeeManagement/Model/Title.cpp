@@ -18,3 +18,10 @@ Title::Title(int ID, const String &name, double salary):m_ID(ID), m_name(name), 
 Title::~Title() {
 
 }
+std::string Title::getTitleID() {
+	return std::to_string(m_ID);
+	}
+
+std::string Title::getTitleName() {
+	return m_name;
+	}

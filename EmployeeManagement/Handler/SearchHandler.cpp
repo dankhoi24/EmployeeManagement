@@ -55,6 +55,10 @@ void SearchHandler::collectParamater(std::string paramater) {
 	EmployeeDAO employeeDB(m_database);
 	// get id of employee from user
 	m_employee = employeeDB.getByID(paramater);
+	//print header of table
+	Employee::printHeader();
+	// print employee
+	PrintLib<Employee>::printEntry(*m_employee);
 	// set state to action after get employeeID (PARAMATER mode)
 	m_state = e_message_type::ACTION;
 	}
