@@ -37,7 +37,7 @@ public:
  * @brief Get the All entry of table
  * 
  */
-	virtual	void getAll() = 0; 
+	virtual	std::vector<T> getAll() = 0; 
 	// SQLHANDLE getSQlStatementHandle();
 	/**
 	 * @brief checking query string 

@@ -17,46 +17,59 @@
 #include "Handler/BaseHandler.h"
 #include "Handler/ViewHandler.h"
 #include "Handler/SidebarHandler.h"
+#include "Lib/ColorLib.h"
 
 
+
+
+
+/**
+ * @brief show Employee logo of software [Transporter/Printer/logo.txt]
+ * 
+ */
 void showLogo() {
-
-	HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
-  // you can loop k higher to see more color choices
-    SetConsoleTextAttribute(hConsole, 1);
-
-
+	 	//read data from file
 		std::ifstream readMenu("Transporter/Printer/logo.txt");
-		if (readMenu.is_open()) {
+		// check opened file
+		if (!readMenu.is_open()) {
+			MessageBox(NULL,TEXT("Logo can't be loaded"),TEXT("Warning"),MB_OK);
+			return;
 		}
+		// print out logo to console
 		std::string line = "";
 		while (getline(readMenu, line)) {
+			// set blue text for logo
+			BLUE_WORD
 			std::cout << line << std::endl;
+			CLEAR_COLOR
 			Sleep(500);
 		}
 		readMenu.close();
-    SetConsoleTextAttribute(hConsole, 15);
-
 }
 
+
+/**
+ * @brief init program 
+ *        show logo, init database, set handler
+ * 
+ * @param database get pointer to database instance
+ * @param current_handler get current handler or sub menu
+ * @param sidebar_handler get sidebar hadnler or main menu
+ */
 void initProgram(DBConnection * &database, BaseHandler *&current_handler, SidebarHandler *&sidebar_handler) {
 
-
+	// show logo to console
 	showLogo();
 
-
+	// init database
 	database = DBConnection::getInstance();
 	database->connectToDB();
+	// init handler
 	EmployeeDAO *x= new EmployeeDAO(database);
-	current_handler = new ViewHandler(database);
-	sidebar_handler = new SidebarHandler();
-	sidebar_handler->printMenu(sidebar_handler->getFileName());
-
+	current_handler = new ViewHandler(database); // sub handler
+	sidebar_handler = new SidebarHandler();      // main handler
+	sidebar_handler->printMenu(sidebar_handler->getFileName()); // print out default menu
 }
-
-
-
-
 
 
 /**
@@ -67,34 +80,11 @@ void initProgram(DBConnection * &database, BaseHandler *&current_handler, Sideba
 int main() {
 	//Init Connection to database
 	DBConnection* database;// = DBConnection::getInstance();
-	BaseHandler *current_handler;
-	SidebarHandler* sidebar_handler;
-	initProgram(database, current_handler, sidebar_handler);
-	//if (k.checkQueryString("s")) {
-	//	k.getAll();
-	//}
+	BaseHandler *current_handler; //current handler
+	SidebarHandler* sidebar_handler; // sildebar handler
+	initProgram(database, current_handler, sidebar_handler); // init program
 	
 
-	//std::string a = "a";
-	//try {
-
-	//	int x = std::stoi(a);
-	//}
-	//catch(std::invalid_argument e) {
-	//	std::cout << "f" << "\n";
-	//}
-
-
-
-	/*const char str[] = "SELECT* FROM Title";
-	x->SQLQuery();
-*/
-
-
 	std::cout << "END" << std::endl;
-
-
-
-
 	std::cin.get();
 }

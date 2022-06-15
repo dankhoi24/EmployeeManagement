@@ -1,3 +1,13 @@
+/**
+ * @file AddHandler.cpp
+ * @author ndkhoi (nguyen.khoi@hitachivantara.com)
+ * @brief Add handler to manage adding employee operator
+ * @version 0.1
+ * @date 2022-06-15
+ * 
+ * @copyright Copyright (c) 2022
+ * 
+ */
 #include "AddHandler.h"
 #include "../Transporter/Inputer.h"
 
@@ -5,16 +15,18 @@
 
 
 AddHandler::AddHandler(DBConnection* database)
-	:m_database(database) {
+	:m_database(database) { // init database
+	// set handler state for addhander = PARAMATER
 	m_state = e_message_type::PARAMATER;
+	// set action state for addhandler = NAME
 	m_add_state = State::NAME;
 	}
 
 bool AddHandler::isFinsh() {
-
+	// if action state == TITLE mean -> finish adding operator
 	return m_add_state == State::TITLE;
+}
 
-	}
 
 void AddHandler::updateEmployee() {
 	//update database
@@ -23,49 +35,52 @@ void AddHandler::updateEmployee() {
 
 	// changed handler
 	Inputer::setHandler(new ViewHandler(DBConnection::getInstance()));
-
 }
+
+
 void AddHandler::executeRequest(int action) {
 	std::cout << "ADDING ACTION \n";
-	}
+}
+
+
 void AddHandler::collectParamater(std::string paramater) {
 	std::cout << m_add_state << "\n";
-
-
-
+	// check which curent action state
 	switch (m_add_state)
 	{
-	case NAME:
-
-		m_employee.setName(paramater);
-		m_add_state = State::PHONE;
+	case NAME: // adding name sate
+		m_employee.setName(paramater); // get paramater from user
+		m_add_state = State::PHONE;	   // set next action state [PHONE]
 		return;
-	case PHONE:
-		m_employee.setPhone(paramater);
-		m_add_state = State::ADDRESS;
+	case PHONE: // adding contect No state
+		m_employee.setPhone(paramater); //get paramater from user
+		m_add_state = State::ADDRESS;   // set next actions state [ADDRESS]
 		return;
-	case ADDRESS:
-		m_employee.setAddess(paramater);
-		m_add_state = State::MAIL;
+	case ADDRESS: // adding address state
+		m_employee.setAddess(paramater); // get paramater from user
+		m_add_state = State::MAIL; // set next action state [MAIL]
 		return;
-	case MAIL:
-		m_employee.setMail(paramater);
-		m_add_state = State::GENDER;
+	case MAIL: // adding mail state
+		m_employee.setMail(paramater); // get paramater from user
+		m_add_state = State::GENDER;  // set next action state [GENDER]
 		return;
-	case GENDER:
-		m_employee.setAddess(paramater);
-		m_add_state = State::STARTDATE;
+	case GENDER: // adding gender state
+		m_employee.setGender(paramater[0]); // get paramater from user
+		m_add_state = State::STARTDATE;  // set next action state [START DATE]
 		return;
-	case STARTDATE:
-		if (m_employee.setStartDate(paramater)) {
+	case STARTDATE: // adding gender state 
+	 	// check user input date isValid
+		if (m_employee.setStartDate(paramater)) { 
 			MessageBox(NULL, TEXT("Invalid date"), TEXT("Error"), MB_OKCANCEL);
 			return;
 		}
-		m_add_state = State::TITLE;
+		m_add_state = State::TITLE; // set next action state [TITLE]
 		return;
-	case TITLE:
-		m_employee.setRole("sth");
-		// do sth
+	case TITLE: // adding title state
+		m_employee.setRole(paramater); // get paramater from user
+		
+		// done adding operator
+		// update employee to database
 		updateEmployee();
 		return;
 	default:
@@ -74,14 +89,13 @@ void AddHandler::collectParamater(std::string paramater) {
 
 	}
 std::string AddHandler::getFileName() {
+	// return string of file name 
 	return ADD_HANDLER_MENU;
 	}
 
 
-
-
-
 void AddHandler::printTitle() {
+	// print title for each adding operator
 	switch (m_add_state)
 	{
 	case NAME:
@@ -109,10 +123,7 @@ void AddHandler::printTitle() {
 	default:
 		break;
 	}
-
-
-
-	}
+}
 
 
 

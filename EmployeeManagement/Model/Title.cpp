@@ -11,7 +11,7 @@
 #include "Title.h"
 
 
-Title::Title(int ID, const String &name, double salary) {
+Title::Title(int ID, const String &name, double salary):m_ID(ID), m_name(name), m_salary(salary) {
 
 }
 

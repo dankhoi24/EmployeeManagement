@@ -130,6 +130,7 @@
     <ClCompile Include="DAO\BaseDAO.cpp" />
     <ClCompile Include="DAO\DBConnection.cpp" />
     <ClCompile Include="DAO\EmployeeDAO.cpp" />
+    <ClCompile Include="DAO\TitleDAO.cpp" />
     <ClCompile Include="EMain.cpp" />
     <ClCompile Include="Handler\AddHandler.cpp" />
     <ClCompile Include="Handler\BaseHandler.cpp" />
@@ -137,6 +138,7 @@
     <ClCompile Include="Handler\SidebarHandler.cpp" />
     <ClCompile Include="Handler\UpdateHandler.cpp" />
     <ClCompile Include="Handler\ViewHandler.cpp" />
+    <ClCompile Include="Lib\PrintLib.cpp" />
     <ClCompile Include="Model\Employee.cpp" />
     <ClCompile Include="Model\TimeT.cpp" />
     <ClCompile Include="Model\Title.cpp" />
@@ -147,12 +149,15 @@
     <ClInclude Include="DAO\BaseDAO.h" />
     <ClInclude Include="DAO\DBConnection.h" />
     <ClInclude Include="DAO\EmployeeDAO.h" />
+    <ClInclude Include="DAO\TitleDAO.h" />
     <ClInclude Include="Handler\AddHandler.h" />
     <ClInclude Include="Handler\BaseHandler.h" />
     <ClInclude Include="Handler\SearchHandler.h" />
     <ClInclude Include="Handler\SidebarHandler.h" />
     <ClInclude Include="Handler\UpdateHandler.h" />
     <ClInclude Include="Handler\ViewHandler.h" />
+    <ClInclude Include="Lib\ColorLib.h" />
+    <ClInclude Include="Lib\PrintLib.h" />
     <ClInclude Include="Model\Employee.h" />
     <ClInclude Include="Model\TimeT.h" />
     <ClInclude Include="Model\Title.h" />

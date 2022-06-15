@@ -10,6 +10,7 @@
  */
 #pragma once
 #include <string>
+#include "../Lib/ColorLib.h"
 #include <ctime>
 #include <iostream>
 #include "TimeT.h"
@@ -69,27 +70,133 @@ public:
 	std::string wtime( TimeT t)const;
 	
 
-	int getId();
-
+	/**
+	 * @brief Set the Id object
+	 * 
+	 * @param id 
+	 */
 	void setId(int id);
+	/**
+	 * @brief Set the Name object
+	 * 
+	 * @param name 
+	 */
 	void setName(std::string name);
+	/**
+	 * @brief Set the Addess object
+	 * 
+	 * @param address 
+	 */
 	void setAddess(std::string address);
+	/**
+	 * @brief Set the Phone object
+	 * 
+	 * @param phone 
+	 */
 	void setPhone(std::string phone);
+	/**
+	 * @brief Set the Mail object
+	 * 
+	 * @param mail 
+	 */
 	void setMail(std::string mail);
+	/**
+	 * @brief Set the Gender object
+	 * 
+	 * @param gender 
+	 */
 	void setGender(char gender);
+	/**
+	 * @brief Set the Start Date object
+	 * 
+	 * @param date 
+	 * @return true 
+	 * @return false 
+	 */
 	bool setStartDate(std::string date);
+	/**
+	 * @brief Set the End Date object
+	 * 
+	 * @param date 
+	 */
 	void setEndDate(std::string date);
+	/**
+	 * @brief Set the Role object
+	 * 
+	 * @param role 
+	 */
 	void setRole(std::string role);
 
-
+	/**
+	 * @brief Get the Id object
+	 * 
+	 * @return int 
+	 */
+	int getId();
 	std::string getName()const;
+	/**
+	 * @brief Get the Address object
+	 * 
+	 * @return std::string 
+	 */
 	std::string getAddress()const;
+	/**
+	 * @brief Get the Phone object
+	 * 
+	 * @return std::string 
+	 */
 	std::string getPhone()const;
+	/**
+	 * @brief Get the Mail object
+	 * 
+	 * @return std::string 
+	 */
 	std::string getMail()const;
-	std::string getGender()const;
+	/**
+	 * @brief Get the Gender Name object
+	 * 
+	 * @return std::string 
+	 */
+	std::string getGenderName() const;
+	/**
+	 * @brief Get the Gender Id object
+	 * 
+	 * @return std::string 
+	 */
+	std::string getGenderId() const;
+	/**
+	 * @brief Get the Start Date object
+	 * 
+	 * @return std::string 
+	 */
 	std::string getStartDate()const;
+	/**
+	 * @brief Get the End Date object
+	 * 
+	 * @return std::string 
+	 */
 	std::string getEndDate()const;
-	std::string getRole()const;
+	/**
+	 * @brief Get the Role Name object
+	 * 
+	 * @return std::string 
+	 */
+	std::string getRoleName() const;
+	/**
+	 * @brief Get the Role Id object
+	 * 
+	 * @return std::string 
+	 */
+	std::string getRoleId() const;
+	/**
+	 * @brief Get the Work Satus object
+	 * 
+	 * @return std::string 
+	 */
+	std::string getWorkSatus() const;
+
+
+
 
 
 
@@ -111,8 +218,20 @@ public:
 	//	
 	//}
 
-	
+	/**
+	 * @brief operator overloading <<
+	 * 
+	 * @param o 
+	 * @param obj 
+	 * @return std::ostream& 
+	 */
+	friend std::ostream &operator<< (std::ostream & o, const Employee & obj);
 
+	/**
+	 * @brief print header of table before show data to user
+	 * 
+	 */
+	static void printHeader();
 
 
 };

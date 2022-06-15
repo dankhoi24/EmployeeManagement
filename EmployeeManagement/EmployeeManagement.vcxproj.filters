@@ -25,6 +25,9 @@
     <ClInclude Include="Handler\UpdateHandler.h" />
     <ClInclude Include="Handler\AddHandler.h" />
     <ClInclude Include="Model\TimeT.h" />
+    <ClInclude Include="Lib\ColorLib.h" />
+    <ClInclude Include="Lib\PrintLib.h" />
+    <ClInclude Include="DAO\TitleDAO.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="DAO\DBConnection.cpp">
@@ -44,6 +47,8 @@
     <ClCompile Include="Handler\UpdateHandler.cpp" />
     <ClCompile Include="Handler\AddHandler.cpp" />
     <ClCompile Include="Model\TimeT.cpp" />
+    <ClCompile Include="Lib\PrintLib.cpp" />
+    <ClCompile Include="DAO\TitleDAO.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="Transporter\Printer\SidebarMenu.txt" />
