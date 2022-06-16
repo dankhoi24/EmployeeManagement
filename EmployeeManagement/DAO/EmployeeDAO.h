@@ -93,5 +93,5 @@ public:
 	 * 
 	 * @param employee 
 	 */
-	void addEmployee(const Employee& employee);
+	bool addEmployee(const Employee& employee);
 };

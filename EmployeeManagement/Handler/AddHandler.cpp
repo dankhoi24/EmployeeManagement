@@ -33,10 +33,14 @@ bool AddHandler::isFinsh() {
 void AddHandler::updateEmployee() {
 	//update database
 	EmployeeDAO employeeDb(m_database);
-	employeeDb.addEmployee(m_employee);
+	bool flag = employeeDb.addEmployee(m_employee);
 	//print result
 	Employee::printHeader();
+	if (!flag) {
+		RED_WORD
+	}
 	PrintLib<Employee>::printEntry(m_employee);
+	CLEAR_COLOR
 
 	// changed handler
 	Inputer::setHandler(new ViewHandler(DBConnection::getInstance()));
@@ -75,7 +79,7 @@ void AddHandler::collectParamater(std::string paramater) {
 		return;
 	case STARTDATE: // adding gender state 
 	 	// check user input date isValid
-		if (m_employee.setStartDate(paramater)) { 
+		if (!m_employee.setStartDate(paramater)) { 
 			MessageBox(NULL, TEXT("Invalid date"), TEXT("Error"), MB_OKCANCEL);
 			return;
 		}
@@ -134,7 +138,7 @@ void AddHandler::printTitle() {
 		std::cout << "any number. Undefined" << std::endl;
 		return;
 	case STARTDATE:
-		std::cout << "Enter employee's start date [YYYY-MM-DD]\n";
+		std::cout << "Enter employee's start date [DD-MM-YYYY]\n";
 		return;
 	case TITLE:
 		std::cout << "Enter employee's title\n";

@@ -23,7 +23,15 @@ void SearchHandler::executeRequest(int action) {
 	case NONE_ACTION: //NONE action
 		return;
 	case DELETE_EMPLOYEE: // delete employee action
-		employeeDB.deleteEmployee(std::to_string(m_employee->getId())); // delete employee by id
+		// delete employee by id
+		if (employeeDB.deleteEmployee(std::to_string(m_employee->getId()))) {
+			MessageBox(NULL, TEXT("Delete employee succeeded"), TEXT("Notify"), MB_OK);
+		} 
+		else {
+
+			MessageBox(NULL, TEXT("Delete emoloyee failed"), TEXT("Notify"), MB_OK);
+			return;
+		}
 		m_state = e_message_type::PARAMATER; // set handler state now is PARAMATER
 		return;
 	case UPDATE_EMPLOYEE: // update employee action
@@ -55,6 +63,10 @@ void SearchHandler::collectParamater(std::string paramater) {
 	EmployeeDAO employeeDB(m_database);
 	// get id of employee from user
 	m_employee = employeeDB.getByID(paramater);
+	if (m_employee == NULL) {
+		MessageBox(NULL, TEXT("Employee is not exitst"), TEXT("Warning"), MB_OK);
+		return;
+	}
 	//print header of table
 	Employee::printHeader();
 	// print employee

@@ -24,11 +24,11 @@
  * 
  * @param employee 
  */
-void EmployeeDAO::addEmployee( const Employee& employee) {
+bool EmployeeDAO::addEmployee( const Employee& employee) {
 	//allocate envinroment for database
 	if (!allocateEnvironment()) {
 		MESSAGE_BOX("Allocate environment fail","ERROR");
-		return;
+		return false;
 	}
 
 	// quetry string
@@ -44,7 +44,7 @@ Values('" + employee.getName() +"', '"+ employee.getPhone() + "','"+ employee.ge
 	// checking statement
 	if (SQL_SUCCESS != SQLExecDirectW(m_SqlStmtHandle,(SQLWCHAR*)str.c_str(), SQL_NTS)) {
 		MESSAGE_BOX("Query string invalid", "ERROR");
-		return;
+		return false;
 	}
 	std::vector<Employee> v_employees;
 
@@ -82,7 +82,8 @@ Values('" + employee.getName() +"', '"+ employee.getPhone() + "','"+ employee.ge
 		SQLBindCol(this->m_SqlStmtHandle, 9, SQL_C_DEFAULT, &is_working, sizeof(is_working), NULL);
 	}
 
-	MessageBox(NULL, TEXT("Adding employee succeeded"), TEXT("Notify"), MB_OKCANCEL);
+	MessageBox(NULL, TEXT("Adding employee succeeded"), TEXT("Notify"), MB_OK);
+	return true;
 }
 
 
@@ -184,7 +185,7 @@ bool EmployeeDAO::deleteEmployee(std::string employee_id) {
 	// check allocate environment
 	if (!allocateEnvironment()) {
 		MESSAGE_BOX("Allocate environment fail","ERROR");
-		return NULL;
+		return false;
 	}
 	// query string
 	std::string a =
@@ -197,8 +198,8 @@ bool EmployeeDAO::deleteEmployee(std::string employee_id) {
 		// checking statement
 		if (SQL_SUCCESS != SQLExecDirectW(m_SqlStmtHandle,(SQLWCHAR*)str.c_str(), SQL_NTS)) {
 
-			MESSAGE_BOX("A2", "ERROR");
-			return NULL;
+			MESSAGE_BOX("Invalid query string", "ERROR");
+			return false;
 		}
 
 		
@@ -231,6 +232,7 @@ bool EmployeeDAO::deleteEmployee(std::string employee_id) {
 	SQLBindCol(this->m_SqlStmtHandle, 9, SQL_C_DEFAULT, &is_working, sizeof(is_working), NULL);
 	while (SQLFetch(this->m_SqlStmtHandle) == SQL_SUCCESS)
 	{
+		std::cout << "SUCCEEDD " << std::endl;
 		SQLLEN sth;
 		SQLBindCol(this->m_SqlStmtHandle, 1, SQL_C_DEFAULT, &id, sizeof(id), NULL);
 		SQLBindCol(this->m_SqlStmtHandle, 2, SQL_C_CHAR, &name, sizeof(name), NULL);
@@ -242,22 +244,20 @@ bool EmployeeDAO::deleteEmployee(std::string employee_id) {
 		SQLBindCol(this->m_SqlStmtHandle, 8, SQL_C_TYPE_DATE, end_date, sizeof(SQL_TIMESTAMP_LEN), NULL);
 		SQLBindCol(this->m_SqlStmtHandle, 9, SQL_C_DEFAULT, &is_working, sizeof(is_working), NULL);
 
-		std::cout << id << " " << name << " "
-			<< phone << " "
-			<< address << " "
-			<< mail << " "
-			<< gender << " "
-			<< start_date->day << " "
-			<< end_date->day << " "
-			<< is_working
+		//std::cout << id << " " << name << " "
+		//	<< phone << " "
+		//	<< address << " "
+		//	<< mail << " "
+		//	<< gender << " "
+		//	<< start_date->day << " "
+		//	<< end_date->day << " "
+		//	<< is_working
 
-			<< std::endl;
+		//	<< std::endl;
 
 	}
 
-	return new Employee();
-
-
+	return true;
 
 
 	}
@@ -288,6 +288,7 @@ Employee* EmployeeDAO::getByID(std::string employee_id) {
 
 
 		Employee* employee = NULL;
+		bool flag = false;
 
 	int id = 0;
 	char name[101] = {};
@@ -311,6 +312,7 @@ Employee* EmployeeDAO::getByID(std::string employee_id) {
 	SQLBindCol(this->m_SqlStmtHandle, 9, SQL_C_DEFAULT, &is_working, sizeof(is_working), NULL);
 	while (SQLFetch(this->m_SqlStmtHandle) == SQL_SUCCESS)
 	{
+		flag = true;
 		SQLLEN sth;
 		SQLBindCol(this->m_SqlStmtHandle, 1, SQL_C_DEFAULT, &id, sizeof(id), NULL);
 		SQLBindCol(this->m_SqlStmtHandle, 2, SQL_C_CHAR, &name, sizeof(name), NULL);
@@ -347,6 +349,9 @@ Employee* EmployeeDAO::getByID(std::string employee_id) {
 	employee = new Employee(id, std::string(name),std::string(phone), std::string(address), std::string(mail), gender[0], start_date_struct, end_date_struct, is_working, 1);
 
 
+	}
+	if (!flag) {
+		return NULL;
 	}
 	return employee;
 }

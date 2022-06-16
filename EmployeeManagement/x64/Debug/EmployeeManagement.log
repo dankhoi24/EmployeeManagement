@@ -1,15 +1,6 @@
-﻿  EmployeeDAO.cpp
-D:\.NET\Rainer\EmployeeManagement\EmployeeManagement\DAO\EmployeeDAO.cpp(73,10): warning C4101: 'sth': unreferenced local variable
-D:\.NET\Rainer\EmployeeManagement\EmployeeManagement\DAO\EmployeeDAO.cpp(145,10): warning C4101: 'sth': unreferenced local variable
-D:\.NET\Rainer\EmployeeManagement\EmployeeManagement\DAO\EmployeeDAO.cpp(234,10): warning C4101: 'sth': unreferenced local variable
-D:\.NET\Rainer\EmployeeManagement\EmployeeManagement\DAO\EmployeeDAO.cpp(314,10): warning C4101: 'sth': unreferenced local variable
-D:\.NET\Rainer\EmployeeManagement\EmployeeManagement\DAO\EmployeeDAO.cpp(404,10): warning C4101: 'sth': unreferenced local variable
-D:\.NET\Rainer\EmployeeManagement\EmployeeManagement\DAO\EmployeeDAO.cpp(487,10): warning C4101: 'sth': unreferenced local variable
-D:\.NET\Rainer\EmployeeManagement\EmployeeManagement\DAO\EmployeeDAO.cpp(570,10): warning C4101: 'sth': unreferenced local variable
-  AddHandler.cpp
+﻿  AddHandler.cpp
   The contents of <filesystem> are available only with C++17 or later.
 D:\.NET\Rainer\EmployeeManagement\EmployeeManagement\Handler\BaseHandler.h(52,1): warning C4129: '_': unrecognized character escape sequence
 D:\.NET\Rainer\EmployeeManagement\EmployeeManagement\Handler\BaseHandler.h(52,1): warning C4129: ' ': unrecognized character escape sequence
 D:\.NET\Rainer\EmployeeManagement\EmployeeManagement\Handler\BaseHandler.h(99): warning C4091: 'static ': ignored on left of 'BaseHandler::e_message_type' when no variable is declared
-  Generating Code...
   EmployeeManagement.vcxproj -> D:\.NET\Rainer\EmployeeManagement\x64\Debug\EmployeeManagement.exe
