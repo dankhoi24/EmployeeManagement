@@ -1,6 +1,0 @@
-﻿  AddHandler.cpp
-  The contents of <filesystem> are available only with C++17 or later.
-D:\.NET\Rainer\EmployeeManagement\EmployeeManagement\Handler\BaseHandler.h(52,1): warning C4129: '_': unrecognized character escape sequence
-D:\.NET\Rainer\EmployeeManagement\EmployeeManagement\Handler\BaseHandler.h(52,1): warning C4129: ' ': unrecognized character escape sequence
-D:\.NET\Rainer\EmployeeManagement\EmployeeManagement\Handler\BaseHandler.h(99): warning C4091: 'static ': ignored on left of 'BaseHandler::e_message_type' when no variable is declared
-  EmployeeManagement.vcxproj -> D:\.NET\Rainer\EmployeeManagement\x64\Debug\EmployeeManagement.exe
